@@ -1,0 +1,18 @@
+.search-div {
+    text-align: center;
+}
+.thumbnail {
+    height: 500px;
+}
+.search-img {
+    max-height: 200px;
+    max-width: 200px;
+}
+.img-div {
+    height: 200px;
+}
+#text {
+    width: 100%;
+    margin-bottom: 5%;
+    margin-top: 5%;
+}
