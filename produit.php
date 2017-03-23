@@ -39,3 +39,4 @@ if($error>0){
     <img src="nutriscore-<?= $data['product']['nutrition_grades']?>.svg"><br/>
 
     <h3>Pour plus d'information sur le produit : cliquez sur ce <a href="https://fr.openfoodfacts.org/produit/<?=$data['code']?>">lien</a></h3><br/>
+
