@@ -39,8 +39,13 @@
       <file leaf-file-name="produit.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/produit.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="60">
               <caret line="4" column="23" lean-forward="true" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+=======
+            <state relative-caret-position="180">
+              <caret line="10" column="50" lean-forward="false" selection-start-line="10" selection-start-column="50" selection-end-line="10" selection-end-column="50" />
+>>>>>>> cd2675bbad8fd4dea9fc4823c13687cd77ad118f
               <folding />
             </state>
           </provider>
@@ -213,13 +218,21 @@
       <workItem from="1489738412811" duration="13559000" />
       <workItem from="1490007140059" duration="12116000" />
       <workItem from="1490083951476" duration="12000" />
+<<<<<<< HEAD
       <workItem from="1490266999660" duration="4505000" />
       <workItem from="1490281288849" duration="1561000" />
+=======
+      <workItem from="1490266999660" duration="6316000" />
+>>>>>>> cd2675bbad8fd4dea9fc4823c13687cd77ad118f
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="36138000" />
+=======
+    <option name="totallyTimeSpent" value="36388000" />
+>>>>>>> cd2675bbad8fd4dea9fc4823c13687cd77ad118f
   </component>
   <component name="ToolWindowManager">
     <frame x="596" y="294" width="918" height="1020" extended-state="0" />
@@ -349,8 +362,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/produit.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="60">
           <caret line="4" column="23" lean-forward="true" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+=======
+        <state relative-caret-position="180">
+          <caret line="10" column="50" lean-forward="false" selection-start-line="10" selection-start-column="50" selection-end-line="10" selection-end-column="50" />
+>>>>>>> cd2675bbad8fd4dea9fc4823c13687cd77ad118f
           <folding />
         </state>
       </provider>
