@@ -6,3 +6,9 @@ function showNext(search, page){
         }
     );
 }
+$(document).ready(function() {
+    $('#text').autocomplete({
+        serviceUrl: '../sport.php',
+        dataType: 'json'
+    });
+});

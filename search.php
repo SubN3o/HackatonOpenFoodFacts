@@ -23,6 +23,7 @@ if(isset($_GET['search'])){
         $k = $count;
     }
     ?>
+    <input type="text" id="text" placeholder="Choisissez un sport"/>
     <div class="container">
         <div class="row text-center" id="result">
             <?php
@@ -40,9 +41,10 @@ if(isset($_GET['search'])){
                 ?>
                 <div class="col-xs-3">
                     <a href="#" class="thumbnail">
-                        <img src="<?= $img?>" alt="Image du produit" class="search-img" />
+                        <div class="img-div">
+                            <img src="<?= $img?>" alt="Image du produit" class="search-img" />
+                        </div>
                         <h1><?= $name?></h1>
-                        <h1><?= $i?></h1>
                     </a>
                 </div>
                 <?php

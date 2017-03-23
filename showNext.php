@@ -1,4 +1,5 @@
 <?php
+include 'bdd.php';
 $search = str_replace(' ', '+', $_GET['search']);
 $page = $_GET['page'];
 // On initialise la BDD
@@ -33,9 +34,10 @@ if($reste<20){
             ?>
             <div class="col-xs-3">
                 <a href="#" class="thumbnail">
-                    <img src="<?= $img?>" alt="Image du produit" class="search-img" />
+                    <div class="img-div">
+                        <img src="<?= $img?>" alt="Image du produit" class="search-img" />
+                    </div>
                     <h1><?= $name?></h1>
-                    <h1><?= $i?></h1>
                 </a>
             </div>
             <?php
