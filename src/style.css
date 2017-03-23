@@ -1,3 +1,10 @@
 .search-div {
     text-align: center;
 }
+.thumbnail {
+    height: 500px;
+}
+.search-img {
+    height: 200px;
+    width: 200px;
+}
