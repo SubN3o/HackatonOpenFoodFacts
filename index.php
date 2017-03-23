@@ -1,13 +1,14 @@
-<DOCTYPE html>
-
-
-<form action="produit.php" method="POST">
-  <div class="form-group">
-    <label for="codebarre">Recherche par Code-Barres</label><br/>
-    <input type="text" class="form-control" name="id" id="codebarre" placeholder="Entrez le numéro de code-barres"><br/>
-  </div>
-  <button type="submit" class="btn btn-default">Rechercher</button>
-</form>
-
-
-</DOCTYPE>
+<?php
+include 'header.php';
+?>
+<div class="container">
+    <div class="row">
+        <form action="search.php" method="GET" class="col-xs-12">
+            <input type="text" class="form-control" name="search" id="search" placeholder="Entrez votre recherche (Code Barre, Nom de produit, Catégorie ...)"><br/>
+            <button type="submit" class="btn btn-default">Rechercher</button>
+        </form>
+    </div>
+</div>
+<?php
+include 'footer.php';
+?>
