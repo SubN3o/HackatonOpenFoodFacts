@@ -1,5 +1,6 @@
 <?php
 $error = 0;
+$_POST ['id'] =5000159419352;
 if(isset($_POST['id'])){
     $id = $_POST['id'];
     // On initialise la BDD
