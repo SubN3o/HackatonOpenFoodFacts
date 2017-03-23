@@ -50,4 +50,6 @@ if($error>0){
     <h3>Pour plus d'information sur le produit : cliquez sur ce <a href="https://fr.openfoodfacts.org/produit/<?=$data['code']?>">lien</a></h3><br/>
 
     </body>
+
+
 </DOCTYPE>
