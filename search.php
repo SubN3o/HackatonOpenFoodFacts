@@ -1,7 +1,6 @@
 <?php
 include 'bdd.php';
 include 'header.php';
-$bdd = mysqli_connect(SERVER, USER, PASS, DB);
 $error = 0;
 if(isset($_GET['search'])){
     $search = str_replace(' ', '+', $_GET['search']);
@@ -23,7 +22,8 @@ if(isset($_GET['search'])){
         $k = $count;
     }
     ?>
-    <input type="text" id="text" placeholder="Choisissez un sport"/>
+    <input type="text" id="text" placeholder="Choisissez un sport" name="text"/>
+    <button class="btn btn-primary" onclick="sportSearch()">Calculer</button>
     <div class="container">
         <div class="row text-center" id="result">
             <?php
@@ -38,13 +38,21 @@ if(isset($_GET['search'])){
                 }else{
                     $img = $data['products'][$i]['image_url'];
                 }
+                $kcal100 = $data['products'][$i]['nutriments']['energy']*4.18;
+                $quantity = $data['products'][$i]['quantity'];
+                $kcal = $kcal100*$quantity/100;
                 ?>
                 <div class="col-xs-3">
-                    <a href="#" class="thumbnail">
+                    <a href="produit.php?id=<?= $data['products'][$i]['code']?>" class="thumbnail">
                         <div class="img-div">
                             <img src="<?= $img?>" alt="Image du produit" class="search-img" />
                         </div>
+                        <span class="hidden" class="productKCAL100" id="<?=$data['products'][$i]['code'];?>"><?= $kcal100?></span>
+                        <span class="hidden" class="productKCAL" id="<?=$data['products'][$i]['code'];?>"><?= $kcal?></span>
                         <h1><?= $name?></h1>
+                        <div class="product-sport">
+                            <p id="productKCAL100-result-<?=$data['products'][$i]['code'];?>"></p>
+                        </div>
                     </a>
                 </div>
                 <?php

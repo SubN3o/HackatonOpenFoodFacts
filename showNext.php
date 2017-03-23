@@ -33,11 +33,14 @@ if($reste<20){
             }
             ?>
             <div class="col-xs-3">
-                <a href="#" class="thumbnail">
+                <a href="produit.php?id=<?= $data['products'][$i]['code']?>" class="thumbnail">
                     <div class="img-div">
                         <img src="<?= $img?>" alt="Image du produit" class="search-img" />
                     </div>
+                    <span class="hidden" class="productKCAL100" id="productKCAL100-<?=$data['products'][$i]['code'];?>"><?= $kcal100?></span>
+                    <span class="hidden" class="productKCAL" id="productKCAL-<?=$data['products'][$i]['code'];?>"><?= $kcal?></span>
                     <h1><?= $name?></h1>
+                    <div class="product-sport"></div>
                 </a>
             </div>
             <?php

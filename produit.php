@@ -1,9 +1,7 @@
 <?php
 include 'bdd.php';
 include 'header.php';
-$bdd = mysqli_connect(SERVER, USER, PASS, DB);
 $error = 0;
-$_GET['id']=3017760000062;
 if(isset($_GET['id'])){
     $id = $_GET['id'];
     // On initialise la BDD
