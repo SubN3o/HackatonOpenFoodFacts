@@ -1,4 +1,5 @@
 <?php
+$position = 'basket';
 include 'navbar.php';
 include 'bdd.php';
 include 'header.php';
