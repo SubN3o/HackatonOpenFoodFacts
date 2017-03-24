@@ -1,8 +1,50 @@
-.search-div {
-    text-align: center;
+body {
+    padding-top: 70px;
 }
+
+/*Accueil*/
+
+.accueil {
+    padding-top: 2%;
+}
+.btn-accueil {
+    margin-top: 2%;
+}
+
+/*Fin Accueil*/
+
+/*Navbar*/
+
+.search-search {
+    width: 70%!important;
+}
+.navbar-form {
+    width: 100%!important;
+}
+
+/*Fin navbar*/
+
+/*Search*/
+
+#text {
+    width: 90%;
+    margin-left: 5%;
+}
+
+.sport-select {
+    margin-bottom: 1%;
+}
+
+.autocomplete-suggestions { border: 1px solid #999; background: #FFF; overflow: auto; }
+.autocomplete-suggestion { padding: 2px 5px; white-space: nowrap; overflow: hidden; }
+.autocomplete-selected { background: #F0F0F0; }
+.autocomplete-suggestions strong { font-weight: normal; color: #3399FF; }
+
 .thumbnail {
     height: 500px;
+    border-radius: 0;
+    border: thin solid lightblue;
+    padding: 1%;
 }
 .search-img {
     max-height: 200px;
@@ -11,54 +53,27 @@
 .img-div {
     height: 200px;
 }
-#text {
-    width: 90%;
-    margin-bottom: 5%;
-    margin-top: 5%;
-
-}
-
-.navbar-text {
-    padding-top: 10px;
-    font-size: x-large;
-}
-
-.logo {
-    width: 100px;
-}
-
-
-#accueil{
-    padding-top: 10vh;
-}
-
-.form{
-    padding-top: 5vh;
-}
-
-#bouton{
-    padding-top: 2vh;
-
-}
-.logo img{
-    width: 80px;
+.product-sport {
+    position: absolute;
+    bottom: 0;
+    min-height: 100px;
+    width: 93%;
+.logo-wild img{
+    width: 60px;
 }
 .logo-open img{
-    width: 140px;
+    width: 120px;
 }
-
+.logo-wild-mini img{
+    width: 50px;
+}
+.logo-open-mini img{
+    width: 50px;
+}
 .mentions{
     color: black;
     font-style: italic;
-
 }
 
-.text-acceuil{
-    padding-top: 5vh;
-}
+/*Fin search*/
 
-h1{
-    text-align: center;
-    font-family: 'Baloo Bhaina', cursive;
-    font-size: 50px;
-}

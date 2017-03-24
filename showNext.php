@@ -31,20 +31,28 @@ if($reste<20){
             }else{
                 $img = $data['products'][$i]['image_url'];
             }
+            if(isset($data['products'][$i]['nutriments']['energy'])){
+                $kcal100 = $data['products'][$i]['nutriments']['energy']/4.184;
+                $quantity = $data['products'][$i]['quantity'];
+                $kcal = $kcal100*$quantity/100;
+            }else{
+                $kcal100 = 0;
+                $kcal = 0;
+            }
             ?>
-            <div class="col-xs-3">
-                <a href="produit.php?id=<?= $data['products'][$i]['code']?>" class="thumbnail">
+            <div class="col-xs-3 thumbnail">
+                <a href="produit.php?id=<?= $data['products'][$i]['code']?>">
                     <div class="img-div">
                         <img src="<?= $img?>" alt="Image du produit" class="search-img" />
                     </div>
                     <span class="hidden productKCAL100" id="<?=$data['products'][$i]['code'];?>"><?= $kcal100?></span>
                     <span class="hidden productKCAL" id="<?=$data['products'][$i]['code'];?>"><?= $kcal?></span>
-                    <h1><?= $name?></h1>
-                    <div class="product-sport">
-                        <p id="productKCAL100-result-<?=$data['products'][$i]['code'];?>"></p>
-                        <p id="productKCAL-result-<?=$data['products'][$i]['code'];?>"></p>
-                    </div>
+                    <h3><?= $name?></h3>
                 </a>
+                <div class="product-sport text-center">
+                    <p id="productKCAL100-result-<?=$data['products'][$i]['code'];?>"></p>
+                    <p id="productKCAL-result-<?=$data['products'][$i]['code'];?>"></p>
+                </div>
             </div>
             <?php
         }

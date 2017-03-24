@@ -1,6 +1,8 @@
 <?php
+$position = 'search';
 include 'bdd.php';
 include 'header.php';
+include 'navbar.php';
 $error = 0;
 if(isset($_GET['search'])){
     $search = str_replace(' ', '+', $_GET['search']);
@@ -22,10 +24,13 @@ if(isset($_GET['search'])){
         $k = $count;
     }
     ?>
-    <input type="text" id="text" placeholder="Choisissez un sport" name="text"/>
-    <button class="btn btn-primary" onclick="sportSearch()">Calculer</button>
-    <div class="container">
-        <div class="row text-center" id="result">
+    <div class="form-group text-center">
+        <input type="text" id="text" placeholder="Choisissez un sport" name="text" class="form-control sport-select"/>
+        <button class="btn btn-primary" onclick="sportSearch()">Calculer</button>
+    </div>
+
+    <div class="container text-center">
+        <div class="row" id="result">
             <?php
             for($i=0;$i<$k;$i++){
                 if(!isset($data['products'][$i]['product_name_fr'])){
@@ -38,23 +43,28 @@ if(isset($_GET['search'])){
                 }else{
                     $img = $data['products'][$i]['image_url'];
                 }
-                $kcal100 = $data['products'][$i]['nutriments']['energy']*4.18;
-                $quantity = $data['products'][$i]['quantity'];
-                $kcal = $kcal100*$quantity/100;
+                if(isset($data['products'][$i]['nutriments']['energy'])){
+                    $kcal100 = $data['products'][$i]['nutriments']['energy']/4.184;
+                    $quantity = $data['products'][$i]['quantity'];
+                    $kcal = $kcal100*$quantity/100;
+                }else{
+                    $kcal100 = 0;
+                    $kcal = 0;
+                }
                 ?>
-                <div class="col-xs-3">
-                    <a href="produit.php?id=<?= $data['products'][$i]['code']?>" class="thumbnail">
+                <div class="col-xs-3 thumbnail">
+                    <a href="produit.php?id=<?= $data['products'][$i]['code']?>">
                         <div class="img-div">
                             <img src="<?= $img?>" alt="Image du produit" class="search-img" />
                         </div>
                         <span class="hidden productKCAL100" id="<?=$data['products'][$i]['code'];?>"><?= $kcal100?></span>
                         <span class="hidden productKCAL" id="<?=$data['products'][$i]['code'];?>"><?= $kcal?></span>
-                        <h1><?= $name?></h1>
-                        <div class="product-sport">
-                            <p id="productKCAL100-result-<?=$data['products'][$i]['code'];?>"></p>
-                            <p id="productKCAL-result-<?=$data['products'][$i]['code'];?>"></p>
-                        </div>
+                        <h3><?= $name?></h3>
                     </a>
+                    <div class="product-sport text-center">
+                        <p id="productKCAL100-result-<?=$data['products'][$i]['code'];?>"></p>
+                        <p id="productKCAL-result-<?=$data['products'][$i]['code'];?>"></p>
+                    </div>
                 </div>
                 <?php
             }
