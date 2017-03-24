@@ -20,11 +20,12 @@ body {
 /*Navbar*/
 
 .search-search {
-    width: 70%!important;
+    width: 80%!important;
 }
 .navbar-form {
-    width: 100%!important;
+    width: 95%!important;
 }
+
 
 /*Fin navbar*/
 
@@ -45,24 +46,19 @@ body {
 .autocomplete-suggestions strong { font-weight: normal; color: #3399FF; }
 
 .thumbnail {
-    height: 500px;
+    height: 350px;
     border-radius: 0;
     border: thin solid lightblue;
-    padding: 1%;
+    padding: 2%;
 }
 .search-img {
-    max-height: 200px;
-    max-width: 200px;
+    max-height: 100px;
+    max-width: 100px;
 }
 .img-div {
-    height: 200px;
+    height: 100px;
 }
 .product-sport {
-    position: absolute;
-    bottom: 0;
-    min-height: 100px;
-    width: 93%;
-
 }
 
 /*Fin search*/

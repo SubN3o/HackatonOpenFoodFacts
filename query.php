@@ -81,7 +81,7 @@ if($_GET['query']=='sportInfo'){
         }
         ?>
         <hr />
-        <h3>Le score nutitionnel de votre panier : </h3>
+        <h3>Le score nutritionnel de votre panier : </h3>
         <img src="src/img/<?= $img ?>.svg"><br/>
         <p><?= $phrase ?></p>
         <button id="emptyBasket" onclick="emptyBasket()" class="btn btn-danger">Vider mon panier</button>
