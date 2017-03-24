@@ -5,11 +5,12 @@ include 'header.php';
 include 'navbar.php';
 $error = 0;
 if(isset($_GET['search'])){
-    $search = str_replace(' ', '+', $_GET['search']);
-    if(is_int($search)&&strlen($search)==13){
-        header('Location : produit.php?id='.$search);
-        exit();
+    $search = $_GET['search'];
+    if(strlen($search)==13&&is_numeric($search)){
+        header('Location: produit.php?id='.$search);
+        exit;
     }
+    $search = str_replace(' ', '+', $_GET['search']);
     // On initialise la BDD
     //Récupère le nombre de résultat. On le divise par 20 (=nb de page). On incrémente le numéro de la page dans l'url pour afficher tout les produits
     $url = "https://world.openfoodfacts.org/cgi/search.pl?search_terms='$search'&search_simple=1&action=process&json=1&page=1";

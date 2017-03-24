@@ -31,7 +31,14 @@ if($error>0){
         <div class="media">
             <div class="media-left">
                 <a href="#">
-                    <img src="<?=$data['product']['image_url']?>">
+                    <?php
+                    if(!isset($data['product']['image_url'])){
+                        $img = "http://placehold.it/200x200";
+                    }else {
+                        $img = $data['product']['image_url'];
+                    }
+                    ?>
+                    <img src="<?=$img?>">
                 </a>
                 <?php
                 if(isset($data['product']['nutriments']['energy'])) {
@@ -57,8 +64,7 @@ if($error>0){
                     <h4><?= round($kcal100) . ' ' . 'Kcal/100g'; ?></h4>
                     <h4><?= round($kcal) . ' ' . 'Kcal' . ' ' . 'pour le produit'; ?></h4>
                     <div class="form-group text-center">
-                        <input type="text" id="sport" placeholder="Choisissez un sport" name="sport"
-                               class="form-control sport-select"/>
+                        <input type="text" id="sport" placeholder="Choisissez un sport" name="sport" class="form-control sport-select"/>
                         <button class="btn btn-primary" onclick="sportSearch2('<?= $kcal100 ?>', '<?= $kcal ?>')">
                             Calculer
                         </button>
