@@ -1,3 +1,4 @@
+
 function sportSearch(){
     var sport = document.getElementById('text').value;
     if(sport!=''){

@@ -46,7 +46,6 @@ body {
     border: thin solid lightblue;
     padding: 1%;
 }
-
 .search-img {
     max-height: 200px;
     max-width: 200px;
@@ -59,6 +58,21 @@ body {
     bottom: 0;
     min-height: 100px;
     width: 93%;
+.logo-wild img{
+    width: 60px;
+}
+.logo-open img{
+    width: 120px;
+}
+.logo-wild-mini img{
+    width: 50px;
+}
+.logo-open-mini img{
+    width: 50px;
+}
+.mentions{
+    color: black;
+    font-style: italic;
 }
 
 /*Fin search*/
