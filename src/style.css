@@ -3,7 +3,7 @@ body {
 
 }
 
-}
+
 /*Accueil*/
 
 .accueil {
@@ -71,7 +71,8 @@ body {
 #footer-autre{
     background-color: #f8f8f8;
     width: 100vw;
-    margin-top: 20px;
+    margin-top: 15vh;
+
 }
 
 #footer-index{
