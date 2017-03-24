@@ -72,4 +72,9 @@ function getBasket(){
         }
     );
 }
+function emptyBasket(){
+    sessionStorage.clear();
+    document.getElementById('basket').innerHTML = "";
+    $( "#emptyBasket" ).before("<div class=\"alert alert-info\" role=\"alert\">Votre pannier a bien été vidé</div>");
+}
 getBasket();

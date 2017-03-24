@@ -2,8 +2,7 @@ body {
     padding-top: 70px;
 
 }
-.navbar-default{
-    background-color: #f8f8f8;;
+
 }
 /*Accueil*/
 
@@ -21,13 +20,19 @@ body {
 /*Fin Accueil*/
 
 /*Navbar*/
+.navbar-default{
+
+    background-image:linear-gradient(#eaeaea, white);
+
+}
 
 .search-search {
-    width: 70%!important;
+    width: 80%!important;
 }
 .navbar-form {
-    width: 100%!important;
+    width: 95%!important;
 }
+
 
 /*Fin navbar*/
 
@@ -48,25 +53,21 @@ body {
 .autocomplete-suggestions strong { font-weight: normal; color: #3399FF; }
 
 .thumbnail {
-    height: 500px;
+    height: 350px;
     border-radius: 0;
-/*    border: thin solid lightblue;*/
+    border: thin solid #eaeaea;
     padding: 1%;
-    background-color: rgba(19, 141, 117, 0.1);
+    background-image:linear-gradient(#eaeaea, white);
+
 }
 .search-img {
-    max-height: 200px;
-    max-width: 200px;
+    max-height: 100px;
+    max-width: 100px;
 }
 .img-div {
-    height: 200px;
+    height: 100px;
 }
 .product-sport {
-    position: absolute;
-    bottom: 0;
-    min-height: 100px;
-    width: 93%;
-
 }
 
 /*Fin search*/
@@ -138,4 +139,9 @@ h1 {
 }
 
 /*End mentions legales*/
+
+.basket-img {
+    max-width: 100px;
+    max-height: 100px;
+}
 
