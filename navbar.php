@@ -1,13 +1,10 @@
 <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid">
-        <p class="navbar-text navbar-left">Manger, Wilder, Bouger avec </p><img class="logo"
-                                                                                src="openfoodfacts-logo-fr-178x150.png"
-                                                                                href="https://fr.openfoodfacts.org/">
-        <form class="navbar-form navbar-right" role="search">
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search">
-            </div>
-            <button type="submit" class="btn btn-default">Rechercher</button>
+    <div class="container">
+        <form class="navbar-form navbar-right row" action="search.php" method="GET">
+            <a class="btn btn-primary" href="basket.php">Mon Panier</a>
+            <a class="btn btn-default" href="index.php">Retour</a>
+            <input type="text" class="form-control search-search" placeholder="Entrez votre recherche (Code Barre, Nom de produit, Catégorie ...)" name="search">
+            <input type="submit" class="btn btn-primary" value="Rechercher">
         </form>
-    </div><!-- /.container-fluid -->
+    </div>
 </nav>

@@ -12,18 +12,13 @@ if(isset($_GET['id'])){
     $data = json_decode(file_get_contents($url), true);
     $query = mysqli_query($bdd, "SELECT * FROM sports");
     //On convertit les Kj pour 100g en Kj
-    $kcal100 = $data['product']['nutriments']['energy']/4.184;
-    //On récupère le poids du produit
-    $quantity = $data['product']['quantity'];
-    //On convertit les kcal pour 100 g en kcal pour tout le produit
-    $kcal = $kcal100*$quantity/100;
-    while($sports = mysqli_fetch_assoc($query)){
-        //On calcule le temps nécessaire pour bruler les calories de 100g et du produit
-        $time100 = round($kcal100/$sports['kcal/h']);
-        $time = round($kcal/$sports['kcal/h']);
-        echo 'En pratiquant '. $sports['sport'].',il vous faudra '.$time100.' heures pour bruler les calories de 100g de '.$data['product']['product_name'].'. IL vous faudr '.$time.' heures pour bruler les calories de tout le produit <br />';
+    if(isset($data['product']['nutriments']['energy'])){
+        $kcal100 = $data['product']['nutriments']['energy']/4.184;
+        //On récupère le poids du produit
+        $quantity = $data['product']['quantity'];
+        //On convertit les kcal pour 100 g en kcal pour tout le produit
+        $kcal = $kcal100*$quantity/100;
     }
-
 }else{
     $error++;
 }
@@ -31,17 +26,54 @@ if($error>0){
     echo 'Une erreur s\'est produite';
 }
 ?>
-<h1><?= $data['product']['product_name_fr']?></h1>
-<button id="addBasket" onclick="addBasket(<?=$data['product']['code']?>)">Ajouter au panier</button>
-    <img src="<?=$data['product']['image_url']?>"><br/>
-
-    <img src="nutriscore-<?= $data['product']['nutrition_grades']?>.svg"><br/>
-
-    <p><?= round($kcal100).' '.'Kcal/100g';?></p><br/>
-    <p><?= round($kcal).' '.'Kcal'.' '.'pour le produit';?></p>
-
-    <h3>Pour plus d'information sur le produit : cliquez sur ce <a href="https://fr.openfoodfacts.org/produit/<?=$data['code']?>">lien</a></h3><br/>
-
+<div class="container">
+    <div class="row">
+        <div class="media">
+            <div class="media-left">
+                <a href="#">
+                    <img src="<?=$data['product']['image_url']?>">
+                </a>
+                <?php
+                if(isset($data['product']['nutriments']['energy'])) {
+                    ?>
+                    <img src="src/img/nutriscore-<?= $data['product']['nutrition_grades'] ?>.svg"><br/>
+                    <?php
+                }
+                ?>
+            </div>
+            <div class="media-body">
+                <h1><?= $data['product']['product_name_fr']?></h1>
+                <?php
+                if(isset($data['product']['nutriments']['energy'])) {
+                    ?>
+                    <button id="addBasket" onclick="addBasket(<?= $data['product']['code'] ?>)" class="btn btn-primary">Ajouter au panier</button>
+                    <?php
+                }
+                ?>
+                <hr />
+                <?php
+                if(isset($data['product']['nutriments']['energy'])){
+                    ?>
+                    <h4><?= round($kcal100) . ' ' . 'Kcal/100g'; ?></h4>
+                    <h4><?= round($kcal) . ' ' . 'Kcal' . ' ' . 'pour le produit'; ?></h4>
+                    <div class="form-group text-center">
+                        <input type="text" id="sport" placeholder="Choisissez un sport" name="sport"
+                               class="form-control sport-select"/>
+                        <button class="btn btn-primary" onclick="sportSearch2('<?= $kcal100 ?>', '<?= $kcal ?>')">
+                            Calculer
+                        </button>
+                    </div>
+                    <p id="KCAL100"></p>
+                    <p id="KCAL"></p>
+                    <?php
+                }
+                ?>
+            </div>
+        </div>
+        <p>Pour plus d'information : <a href="https://fr.openfoodfacts.org/produit/<?=$data['code']?>">lien</a></p><br/>
+    </div>
+    <br/>
+</div>
 <?php
 include 'footer.php';
 ?>

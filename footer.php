@@ -1,7 +1,7 @@
 <footer class="text-center">
-
     <?php
     if($position != 'index'){
+
         echo '
     <div class="row">
         <div class="style-footer">
@@ -23,6 +23,7 @@
         ?>
 
     <a class="mentions" href="mention_legales.php">mentions legales</a><br/>
+
 
 
 </footer>
