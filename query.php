@@ -1,10 +1,10 @@
 <?php
 include 'bdd.php';
-$Tbien = array('Tu as une alimentation parfaite', 'Tu es une légende vivante chez les nuitritionistes', 'Tu manges 5 fruits et légumes ... par repas');
-$bien = array('Ton alimentation est saine et équilibrée, et tu t\'accordes de petits plaisirs de temps à autres', 'Ton maraicher est ton ami', 'Mangez des pommes');
-$moyen = array('Faire un régime s\'est bien, le respecter s\'est mieux', 'Tu es comme l\'aiguille de la balance, tu zigzag avant de t\'arrêter sur ton poids de croisière', 'Peu mieux faire');
-$mal = array('Continue comme cela, et tu risques de tenir le rôle principal dans Super Size Me 2', 'L\'industrie de la restauration rapide ne se relèvera pas de ta disparition', 'Tu sera bientôt un chef d\'oeuvre de l\'art moderne');
-$Tmal = array('Pompes Funèbres 45 : 99.99.99.99.99, promotion sur la vente en gros', 'Plus besoin de boués à la mer', 'Comme une tortue, vous risquez de vous retrouvez coincé sur le dos', 'Comme dit le dicton : Plus s\'est gros, mieux cela passe', 'Vous serez bientôt capable de combler le trou de la sécu tout seul');
+$Tbien = array('Tu as une alimentation parfaite.', 'Tu es une légende vivante chez les nuitritionistes.', 'Tu manges 5 fruits et légumes ... par repas.');
+$bien = array('Ton alimentation est saine et équilibrée, et tu t\'accordes de petits plaisirs de temps à autres.', 'Ton maraicher est ton ami.', 'Mangez des pommes.');
+$moyen = array('Faire un régime s\'est bien, le respecter s\'est mieux.', 'Tu es comme l\'aiguille de la balance, tu zigzag avant de t\'arrêter sur ton poids de croisière.', 'Peu mieux faire.');
+$mal = array('Continue comme cela, et tu risques de tenir le rôle principal dans Super Size Me 2.', 'L\'industrie de la restauration rapide ne se relèvera pas de ta disparition.', 'Tu sera bientôt un chef d\'oeuvre de l\'art moderne.');
+$Tmal = array('Pompes Funèbres 45 : 99.99.99.99.99, promotion sur la vente en gros.', 'Plus besoin de boués à la mer.', 'Comme une tortue, vous risquez de vous retrouvez coincé sur le dos.', 'Comme dit le dicton : Plus s\'est gros, mieux cela passe.', 'Vous serez bientôt capable de combler le trou de la sécu tout seul.');
 if($_GET['query']=='sportInfo'){
     $query = mysqli_query($bdd, "SELECT * FROM sports WHERE sport='".$_GET['value']."'");
     $data = mysqli_fetch_assoc($query);
@@ -97,6 +97,13 @@ if($_GET['query']=='sportInfo'){
 
         </div>
 
+        <?php
+    }else {
+        ?>
+        <div class="jumbotron text-center">
+            <h1>Famine !</h1>
+            <p>Votre panier est vide</p>
+        </div>
         <?php
     }
 }
