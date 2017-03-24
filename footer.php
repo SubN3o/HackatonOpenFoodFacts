@@ -1,16 +1,14 @@
-<link rel="stylesheet" type="text/css" href="index.css">
-
 <footer class="text-center">
 <div class="logo">
     <a class="logo-wild" href="https://wildcodeschool.fr/"><img src="logo_orange_small.jpg"></a>
-    <a class="logo-open" href="https://fr.openfoodfacts.org/"><img src="open-food-facts.png"></a><br/>
+    <a class="logo-open" href="https://fr.openfoodfacts.org/"><img src="open-food-facts.png"></a>
 </div>
     <div class="cree">
         <p>
             Créé par Jéremie, Quentin et Nicolas P.
         </p>
     </div>
-    <a class="mentions" href="mention_legales.html">mentions legales</a><br/>
+    <a class="mentions" href="mention_legales.html">mentions legales</a>
 
 
 </footer>
