@@ -80,7 +80,7 @@ if($error>0){
                 </div>
             </div>
         </div>
-        <p>Pour plus d'information : <a href="https://fr.openfoodfacts.org/produit/<?=$data['code']?>">lien</a></p><br/>
+        <p>Pour plus d'information sur le produit : <a href="https://fr.openfoodfacts.org/produit/<?=$data['code']?>">Cliquez ici</a></p><br/>
     </div>
     <br/>
 </div>

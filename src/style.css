@@ -1,5 +1,8 @@
 body {
     padding-top: 70px;
+
+}
+
 }
 /*Accueil*/
 
@@ -17,6 +20,11 @@ body {
 /*Fin Accueil*/
 
 /*Navbar*/
+.navbar-default{
+
+    background-image:linear-gradient(#eaeaea, white);
+
+}
 
 .search-search {
     width: 80%!important;
@@ -47,8 +55,10 @@ body {
 .thumbnail {
     height: 350px;
     border-radius: 0;
-    border: thin solid lightblue;
-    padding: 2%;
+    border: thin solid #eaeaea;
+    padding: 1%;
+    background-image:linear-gradient(#eaeaea, white);
+
 }
 .search-img {
     max-height: 100px;
@@ -63,7 +73,24 @@ body {
 /*Fin search*/
 
 /*Footer*/
+#footer-autre{
+    background-color: #f8f8f8;
+    margin-top: 20px;
+    position: absolute;
+    bottom: 0 !important;
+    right:0 !important;
+    left:0 !important;
+    width: 100vw;
 
+}
+
+#footer-index{
+    background-color: #f8f8f8;
+    margin-top: 20px;
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+}
 .logo-wild img{
     width: 60px;
 }
@@ -78,10 +105,16 @@ body {
 }
 
 .style-footer{
+    padding: 30px;
     font-size: 11px;
-    padding-top: 60px;
+
 }
 
+
+.marge-footer{
+    padding-top: 20px;
+
+}
 /*End Foooter*/
 
 /*mentions legales*/
@@ -90,15 +123,21 @@ h1 {
     font-family: 'Baloo Bhaina', cursive;
     font-size: 50px;
 }
-.mentions{
+.mentions {
     color: black;
     font-size: 10px;
     font-style: italic;
-.mentions-legales{
-    padding-top: 150Px;
-    font-family: 'Baloo Bhaina', cursive;
-    padding-bottom: 120px;
 }
+.mentions-legales{
+/*    padding-top: 150Px;*/
+    font-family: 'Baloo Bhaina', cursive;
+/*    padding-bottom: 60px;*/
+}
+.img-mention{
+    width: 200px;
+    padding: 20px;
+}
+
 /*End mentions legales*/
 
 .basket-img {
