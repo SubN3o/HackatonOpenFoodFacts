@@ -12,9 +12,10 @@
     height: 200px;
 }
 #text {
-    width: 100%;
+    width: 90%;
     margin-bottom: 5%;
     margin-top: 5%;
+
 }
 
 .navbar-text {
@@ -37,4 +38,18 @@
 
 #bouton{
     padding-top: 2vh;
+
+    margin-left: 2%;
+}
+.logo img{
+    width: 80px;
+}
+.logo-open img{
+    width: 140px;
+}
+
+.mentions{
+    color: black;
+    font-style: italic;
+
 }
