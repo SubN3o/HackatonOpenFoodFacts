@@ -18,6 +18,11 @@ body {
 /*Fin Accueil*/
 
 /*Navbar*/
+.navbar-default{
+
+    background-image:linear-gradient(#eaeaea, white);
+
+}
 
 .search-search {
     width: 70%!important;
@@ -47,8 +52,9 @@ body {
 .thumbnail {
     height: 500px;
     border-radius: 0;
-    border: thin solid lightblue;
+    border: thin solid #eaeaea;
     padding: 1%;
+    background-image:linear-gradient(#eaeaea, white);
 }
 .search-img {
     max-height: 200px;
