@@ -1,5 +1,6 @@
 
     <?php
+    $position = 'index';
     include 'header.php';
     ?>
     <div class="container" id="accueil">
@@ -19,7 +20,7 @@
              <p>
                  Choisissez vos produits,<br/>
                  Choisissez votre sport,<br/>
-                 Nous vous dirons combien de temps vous devez pratiquer ce sport pour éliminer les calories ...
+                 Nous vous dirons combien de temps vous devrez pratiquer ce sport pour éliminer les calories ...
              </p>
 
         </div>
@@ -29,4 +30,5 @@
 
     <?php
     include 'footer.php';
+
     ?>

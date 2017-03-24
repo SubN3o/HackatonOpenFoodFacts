@@ -41,13 +41,18 @@
 
     margin-left: 2%;
 }
-.logo img{
-    width: 80px;
+.logo-wild img{
+    width: 60px;
 }
 .logo-open img{
-    width: 140px;
+    width: 120px;
 }
-
+.logo-wild-mini img{
+    width: 50px;
+}
+.logo-open-mini img{
+    width: 50px;
+}
 .mentions{
     color: black;
     font-style: italic;

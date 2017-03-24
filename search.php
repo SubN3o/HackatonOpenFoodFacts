@@ -1,4 +1,5 @@
 <?php
+$position = 'search';
 include 'bdd.php';
 include 'header.php';
 $error = 0;
