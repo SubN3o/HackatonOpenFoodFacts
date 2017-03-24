@@ -23,14 +23,13 @@ if(isset($_GET['id'])){
     $quantity = $data['product']['quantity'];
     //On convertit les kcal pour 100 g en kcal pour tout le produit
     $kcal = $kcal100*$quantity/100;
-/*    while($sports = mysqli_fetch_assoc($query)){
+    while($sports = mysqli_fetch_assoc($query)){
         //On calcule le temps nécessaire pour bruler les calories de 100g et du produit
         $time100 = round($kcal100/$sports['kcal/h']);
         $time = round($kcal/$sports['kcal/h']);
         echo 'En pratiquant '. $sports['sport'].',il vous faudra '.$time100.' heures pour bruler les calories de 100g de '.$data['product']['product_name'].'. IL vous faudr '.$time.' heures pour bruler les calories de tout le produit <br />';
-    }*/
+    }
 
-var_dump($data);
 }else{
     $error++;
 }
