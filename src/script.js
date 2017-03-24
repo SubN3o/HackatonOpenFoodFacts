@@ -10,10 +10,17 @@ function sportSearch(){
     var sport = document.getElementById('text').value;
     $.get("../query.php", {query: 'sportInfo', value: document.getElementById('text').value},
         function(data) {
-            $(".productKCAL100").each(function(){
-                var kcal100 = ($(this).value*4.18)/data;
-                alert(kcal100);
-                document.getElementById('productKCAL100-result-'+$(this).id+'').value = kcal100;
+            var classe = $(".productKCAL100");
+            classe.each(function(index, elem){
+                var value = $(elem).text();
+                var kcal100 = Math.round((value*4.18)/data);
+                document.getElementById('productKCAL100-result-'+this.id+'').innerHTML = kcal100;
+            });
+            var classe = $(".productKCAL");
+            classe.each(function(index, elem){
+                var value = $(elem).text();
+                var kcal = Math.round((value*)/data);
+                document.getElementById('productKCAL100-result-'+this.id+'').innerHTML = kcal100;
             });
         }
     );
