@@ -42,6 +42,7 @@ if($reste<20){
                     <h1><?= $name?></h1>
                     <div class="product-sport">
                         <p id="productKCAL100-result-<?=$data['products'][$i]['code'];?>"></p>
+                        <p id="productKCAL-result-<?=$data['products'][$i]['code'];?>"></p>
                     </div>
                 </a>
             </div>
