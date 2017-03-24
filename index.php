@@ -15,7 +15,7 @@
     </div>
     <div class="container" id="accueil">
         <div class="row">
-            <img class="col-lg-offset-4 col-lg-4 col-xs-offset-2 col-xs-8" src="openfoodfacts-logo-med.png">
+            <img class="col-lg-offset-4 col-lg-4 col-xs-offset-2 col-xs-8" src="mangerbougerwilder.png">
             <div class="col-lg-offset-2 col-lg-8">
                 <form class="form" action="search.php" method="GET">
                     <input type="text" class="form-control" name="search" id="search"
