@@ -40,18 +40,20 @@ if($reste<20){
                 $kcal = 0;
             }
             ?>
-            <div class="col-xs-3 thumbnail">
-                <a href="produit.php?id=<?= $data['products'][$i]['code']?>">
-                    <div class="img-div">
-                        <img src="<?= $img?>" alt="Image du produit" class="search-img" />
+            <div class="col-xs-12 col-sm-3">
+                <div class="thumbnail">
+                    <a href="produit.php?id=<?= $data['products'][$i]['code']?>">
+                        <div class="img-div">
+                            <img src="<?= $img?>" alt="Image du produit" class="search-img" />
+                        </div>
+                        <span class="hidden productKCAL100" id="<?=$data['products'][$i]['code'];?>"><?= $kcal100?></span>
+                        <span class="hidden productKCAL" id="<?=$data['products'][$i]['code'];?>"><?= $kcal?></span>
+                        <h4><?= $name?></h4>
+                    </a>
+                    <div class="product-sport text-center">
+                        <p id="productKCAL100-result-<?=$data['products'][$i]['code'];?>"></p>
+                        <p id="productKCAL-result-<?=$data['products'][$i]['code'];?>"></p>
                     </div>
-                    <span class="hidden productKCAL100" id="<?=$data['products'][$i]['code'];?>"><?= $kcal100?></span>
-                    <span class="hidden productKCAL" id="<?=$data['products'][$i]['code'];?>"><?= $kcal?></span>
-                    <h3><?= $name?></h3>
-                </a>
-                <div class="product-sport text-center">
-                    <p id="productKCAL100-result-<?=$data['products'][$i]['code'];?>"></p>
-                    <p id="productKCAL-result-<?=$data['products'][$i]['code'];?>"></p>
                 </div>
             </div>
             <?php
@@ -59,7 +61,7 @@ if($reste<20){
         $page++;
         if($maxPage>$page){
             ?>
-            <button id="showNext" onclick="showNext('<?php echo $search;?>', <?php echo $page;?>)">Afficher les résultats suivants</button>
+            <button id="showNext" class="btn btn-default" onclick="showNext('<?php echo $search;?>', <?php echo $page;?>)">Afficher les résultats suivants</button>
             <?php
         }
         ?>
