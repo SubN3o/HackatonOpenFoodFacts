@@ -11,15 +11,10 @@ include 'header.php';
              </p>
         </div>
     </div>
-    <div class="row">
-        <form action="search.php" method="GET" class="col-xs-12">
-            <input type="text" class="form-control" name="search" id="search" placeholder="Entrez votre recherche (Code Barre, Nom du produit, Catégorie ...)"><br/>
-            <button type="submit" class="btn btn-default">Rechercher</button>
-        </form>
-    </div>
 </div>
-<?php
-include 'footer.php';
-?>
 
+    <?php
+    include 'footer.php';
+    ?>
+    </body>
 

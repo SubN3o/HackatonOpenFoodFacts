@@ -1,3 +1,30 @@
 .search-div {
     text-align: center;
 }
+.thumbnail {
+    height: 500px;
+}
+.search-img {
+    max-height: 200px;
+    max-width: 200px;
+}
+.img-div {
+    height: 200px;
+}
+#text {
+    width: 90%;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    margin-left: 2%;
+}
+.logo img{
+    width: 80px;
+}
+.logo-open img{
+    width: 140px;
+}
+
+.mentions{
+    color: black;
+    font-style: italic;
+}

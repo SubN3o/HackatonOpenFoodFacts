@@ -1,9 +1,15 @@
+
+<DOCTYPE html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    </head>
+    <body>
+
 <?php
+include 'navbar.php';
 include 'bdd.php';
 include 'header.php';
-$bdd = mysqli_connect(SERVER, USER, PASS, DB);
 $error = 0;
-$_GET['id']=3017760000062;
 if(isset($_GET['id'])){
     $id = $_GET['id'];
     // On initialise la BDD
