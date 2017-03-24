@@ -20,11 +20,7 @@ body {
 /*Fin Accueil*/
 
 /*Navbar*/
-.navbar-default{
 
-    background-image:linear-gradient(#eaeaea, white);
-
-}
 
 .search-search {
     width: 80%!important;
@@ -55,9 +51,8 @@ body {
 .thumbnail {
     height: 350px;
     border-radius: 0;
-    border: thin solid #eaeaea;
-    padding: 1%;
-    background-image:linear-gradient(#eaeaea, white);
+    padding: 2%;
+    background-color: #f8f8f8;
 
 }
 .search-img {
@@ -75,13 +70,8 @@ body {
 /*Footer*/
 #footer-autre{
     background-color: #f8f8f8;
-    margin-top: 20px;
-    position: absolute;
-    bottom: 0 !important;
-    right:0 !important;
-    left:0 !important;
     width: 100vw;
-
+    margin-top: 20px;
 }
 
 #footer-index{
