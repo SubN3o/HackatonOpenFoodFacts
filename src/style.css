@@ -54,7 +54,8 @@
 }
 .mentions{
     color: black;
-    font-style: italic;
+/*    font-style: italic;*/
+    font-size: 10px;
 
 }
 
@@ -67,3 +68,16 @@ h1{
     font-family: 'Baloo Bhaina', cursive;
     font-size: 50px;
 }
+
+.style-footer{
+    font-size: 11px;
+    padding-top: 60px;
+}
+
+.mentions-legales{
+    padding-top: 150Px;
+    font-family: 'Baloo Bhaina', cursive;
+    padding-bottom: 120px;
+
+}
+
