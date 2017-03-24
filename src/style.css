@@ -75,8 +75,10 @@ body {
 #footer-autre{
     background-color: #f8f8f8;
     margin-top: 20px;
-    position: inherit;
+    position: absolute;
     bottom: 0 !important;
+    right:0 !important;
+    left:0 !important;
     width: 100vw;
 
 }
