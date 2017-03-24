@@ -16,3 +16,25 @@
     margin-bottom: 5%;
     margin-top: 5%;
 }
+
+.navbar-text {
+    padding-top: 10px;
+    font-size: x-large;
+}
+
+.logo {
+    width: 100px;
+}
+
+
+#accueil{
+    padding-top: 15vh;
+}
+
+.form{
+    padding-top: 5vh;
+}
+
+#bouton{
+    padding-top: 2vh;
+}
