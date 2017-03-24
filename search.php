@@ -53,7 +53,7 @@ if(isset($_GET['search'])){
                     $kcal = 0;
                 }
                 ?>
-                <div class="col-xs-3">
+                <div class="col-xs-12 col-sm-3">
                     <div class="thumbnail">
                         <a href="produit.php?id=<?= $data['products'][$i]['code']?>">
                             <div class="img-div">
@@ -75,7 +75,7 @@ if(isset($_GET['search'])){
                 ?>
                 <br />
                 <div class="col-xs-12">
-                    <button id="showNext" onclick="showNext('<?php echo $search;?>', 2)">Afficher les résultats suivants</button>
+                    <button class="btn btn-default" id="showNext" onclick="showNext('<?php echo $search;?>', 2)">Afficher les résultats suivants</button>
                 </div>
 
                 <?php

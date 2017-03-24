@@ -3,8 +3,8 @@ include 'bdd.php';
 $Tbien = array('Tu as une alimentation parfaite', 'Tu es une légende vivante chez les nuitritionistes', 'Tu manges 5 fruits et légumes ... par repas');
 $bien = array('Ton alimentation est saine et équilibrée, et tu t\'accordes de petits plaisirs de temps à autres', 'Ton maraicher est ton ami', 'Mangez des pommes');
 $moyen = array('Faire un régime s\'est bien, le respecter s\'est mieux', 'Tu es comme l\'aiguille de la balance, tu zigzag avant de t\'arrêter sur ton poids de croisière', 'Peu mieux faire');
-$mal = array('Continue comme cela, et tu risques de tenir le rôle principal dans Super Size Me 2', 'L\'industrie de la restauration rapide ne se relèvera pas de ta disparition', 'Continue comme cela et tu deviendra un chef d\'oeuvre de l\'art moderne');
-$Tmal = array('Pompes Funèbres 45 : 99.99.99.99.99, ventes en gros', 'Plus besoin de boués à la mer', 'Comme une tortue, vous risquez de vous retrouvez coincé sur le dos', 'Comme dit le dicton : Plus s\'est gros, mieux cela passe');
+$mal = array('Continue comme cela, et tu risques de tenir le rôle principal dans Super Size Me 2', 'L\'industrie de la restauration rapide ne se relèvera pas de ta disparition', 'Tu sera bientôt un chef d\'oeuvre de l\'art moderne');
+$Tmal = array('Pompes Funèbres 45 : 99.99.99.99.99, promotion sur la vente en gros', 'Plus besoin de boués à la mer', 'Comme une tortue, vous risquez de vous retrouvez coincé sur le dos', 'Comme dit le dicton : Plus s\'est gros, mieux cela passe', 'Vous serez bientôt capable de combler le trou de la sécu tout seul');
 if($_GET['query']=='sportInfo'){
     $query = mysqli_query($bdd, "SELECT * FROM sports WHERE sport='".$_GET['value']."'");
     $data = mysqli_fetch_assoc($query);
@@ -30,41 +30,46 @@ if($_GET['query']=='sportInfo'){
             $array[] = $data['product']['nutrition_grades'];
             ?>
             <div class="media">
-                <div class="media-left">
-                    <a href="#">
-                        <img src="<?=$data['product']['image_url']?>">
-                    </a>
-                    <?php
-                    if(isset($data['product']['nutriments']['energy'])) {
-                        ?>
-                        <img src="src/img/nutriscore-<?= $data['product']['nutrition_grades'] ?>.svg"><br/>
+                <div class="col-xs-12 col-sm-4">
+                    <div class="media-left">
+                        <a href="#">
+                            <img src="<?=$data['product']['image_url']?>" class="hidden-xs basket-img">
+                        </a>
                         <?php
-                    }
-                    ?>
+                        if(isset($data['product']['nutriments']['energy'])) {
+                            ?>
+                            <img src="src/img/nutriscore-<?= $data['product']['nutrition_grades'] ?>.svg"><br/>
+                            <?php
+                        }
+                        ?>
+                    </div>
                 </div>
-                <div class="media-body">
-                    <h1><?= $data['product']['product_name_fr']?></h1>
-                    <hr />
-                    <?php
-                    if(isset($data['product']['nutriments']['energy'])){
-                        ?>
-                        <h4><?= round($kcal100) . ' ' . 'Kcal/100g'; ?></h4>
-                        <h4><?= round($kcal) . ' ' . 'Kcal' . ' ' . 'pour le produit'; ?></h4>
+                <div class="col-xs-12 col-sm-6">
+                    <div class="media-body">
+                        <h1><?= $data['product']['product_name_fr']?></h1>
+                        <hr />
                         <?php
-                    }
-                    ?>
+                        if(isset($data['product']['nutriments']['energy'])){
+                            ?>
+                            <h4><?= round($kcal100) . ' ' . 'Kcal/100g'; ?></h4>
+                            <h4><?= round($kcal) . ' ' . 'Kcal' . ' ' . 'pour le produit'; ?></h4>
+                            <?php
+                        }
+                        ?>
+                    </div>
                 </div>
             </div>
+            <hr />
             <?php
         }
         $score = score($array);
         if($score==1){
             $rand = rand(0,count($Tmal)-1);
-            $phrase = $Tmal[$rand];
+            $phrase = $Tmal[$rand].' Pour remedier à cela, nous vous conseillons le lien suivant : <a href="https://www.pagesjaunes.fr/annuaire/orleans-45/pompes-funebres">Pompes Funèbres - Pages Jaunes</a>';
             $img = "nutriscore-e";
         }else if($score==2){
             $rand = rand(0,count($mal)-1);
-            $phrase = $mal[$rand];
+            $phrase = $mal[$rand].' Pour remedier à cela, nous vous conseillons le lien suivant : <a href="https://www.pagesjaunes.fr/annuaire/orleans-45/nutritioniste">Nutritioniste - Pages Jaunes</a>';
             $img = "nutriscore-d";
         }else if($score==3){
             $rand = rand(0,count($moyen)-1);
@@ -80,11 +85,18 @@ if($_GET['query']=='sportInfo'){
             $img = "nutriscore-a";
         }
         ?>
-        <hr />
-        <h3>Le score nutritionnel de votre panier : </h3>
-        <img src="src/img/<?= $img ?>.svg"><br/>
-        <p><?= $phrase ?></p>
-        <button id="emptyBasket" onclick="emptyBasket()" class="btn btn-danger">Vider mon panier</button>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h3>Le score nutritionnel de votre panier : </h3>
+                    <img src="src/img/<?= $img ?>.svg"><br/>
+                    <p><?= $phrase ?></p>
+                    <button id="emptyBasket" onclick="emptyBasket()" class="btn btn-danger">Vider mon panier</button>
+                </div>
+            </div>
+
+        </div>
+
         <?php
     }
 }

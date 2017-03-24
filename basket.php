@@ -4,7 +4,7 @@ include 'navbar.php';
 include 'bdd.php';
 include 'header.php';
 ?>
-<div class="container">
+<div class="container text-center">
     <div class="row" id="basket">
 
     </div>

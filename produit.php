@@ -26,54 +26,58 @@ if($error>0){
     echo 'Une erreur s\'est produite';
 }
 ?>
-<div class="container">
+<div class="container text-center">
     <div class="row">
         <div class="media">
-            <div class="media-left">
-                <a href="#">
+            <div class="col-xs-12 col-sm-5">
+                <div class="media-left">
+                    <a href="#">
+                        <?php
+                        if(!isset($data['product']['image_url'])){
+                            $img = "http://placehold.it/200x200";
+                        }else {
+                            $img = $data['product']['image_url'];
+                        }
+                        ?>
+                        <img src="<?=$img?>" class="hidden-xs">
+                    </a>
                     <?php
-                    if(!isset($data['product']['image_url'])){
-                        $img = "http://placehold.it/200x200";
-                    }else {
-                        $img = $data['product']['image_url'];
+                    if(isset($data['product']['nutriments']['energy'])) {
+                        ?>
+                        <img src="src/img/nutriscore-<?= $data['product']['nutrition_grades'] ?>.svg"><br/>
+                        <?php
                     }
                     ?>
-                    <img src="<?=$img?>">
-                </a>
-                <?php
-                if(isset($data['product']['nutriments']['energy'])) {
-                    ?>
-                    <img src="src/img/nutriscore-<?= $data['product']['nutrition_grades'] ?>.svg"><br/>
-                    <?php
-                }
-                ?>
+                </div>
             </div>
-            <div class="media-body">
-                <h1><?= $data['product']['product_name_fr']?></h1>
-                <?php
-                if(isset($data['product']['nutriments']['energy'])) {
-                    ?>
-                    <button id="addBasket" onclick="addBasket(<?= $data['product']['code'] ?>)" class="btn btn-primary">Ajouter au panier</button>
+            <div class="col-xs-12 col-sm-6">
+                <div class="media-body">
+                    <h1><?= $data['product']['product_name_fr']?></h1>
                     <?php
-                }
-                ?>
-                <hr />
-                <?php
-                if(isset($data['product']['nutriments']['energy'])){
+                    if(isset($data['product']['nutriments']['energy'])) {
+                        ?>
+                        <button id="addBasket" onclick="addBasket(<?= $data['product']['code'] ?>)" class="btn btn-primary">Ajouter au panier</button>
+                        <?php
+                    }
                     ?>
-                    <h4><?= round($kcal100) . ' ' . 'Kcal/100g'; ?></h4>
-                    <h4><?= round($kcal) . ' ' . 'Kcal' . ' ' . 'pour le produit'; ?></h4>
-                    <div class="form-group text-center">
-                        <input type="text" id="sport" placeholder="Choisissez un sport" name="sport" class="form-control sport-select"/>
-                        <button class="btn btn-primary" onclick="sportSearch2('<?= $kcal100 ?>', '<?= $kcal ?>')">
-                            Calculer
-                        </button>
-                    </div>
-                    <p id="KCAL100"></p>
-                    <p id="KCAL"></p>
+                    <hr />
                     <?php
-                }
-                ?>
+                    if(isset($data['product']['nutriments']['energy'])){
+                        ?>
+                        <h4><?= round($kcal100) . ' ' . 'Kcal/100g'; ?></h4>
+                        <h4><?= round($kcal) . ' ' . 'Kcal' . ' ' . 'pour le produit'; ?></h4>
+                        <div class="form-group text-center">
+                            <input type="text" id="sport" placeholder="Choisissez un sport" name="sport" class="form-control sport-select"/>
+                            <button class="btn btn-primary" onclick="sportSearch2('<?= $kcal100 ?>', '<?= $kcal ?>')">
+                                Calculer
+                            </button>
+                        </div>
+                        <p id="KCAL100"></p>
+                        <p id="KCAL"></p>
+                        <?php
+                    }
+                    ?>
+                </div>
             </div>
         </div>
         <p>Pour plus d'information : <a href="https://fr.openfoodfacts.org/produit/<?=$data['code']?>">lien</a></p><br/>
