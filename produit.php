@@ -1,13 +1,5 @@
 <?php
 $position = 'produit';
-?>
-<DOCTYPE html>
-    <head>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    </head>
-    <body>
-
-<?php
 include 'navbar.php';
 include 'bdd.php';
 include 'header.php';
@@ -39,9 +31,8 @@ if($error>0){
     echo 'Une erreur s\'est produite';
 }
 ?>
-
 <h1><?= $data['product']['product_name_fr']?></h1>
-
+<button id="addBasket" onclick="addBasket(<?=$data['product']['code']?>)">Ajouter au panier</button>
     <img src="<?=$data['product']['image_url']?>"><br/>
 
     <img src="nutriscore-<?= $data['product']['nutrition_grades']?>.svg"><br/>
