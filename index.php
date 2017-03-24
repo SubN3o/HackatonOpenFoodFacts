@@ -1,5 +1,6 @@
 
     <?php
+    $position = 'index';
     include 'header.php';
     ?>
     <div class="container" id="accueil">

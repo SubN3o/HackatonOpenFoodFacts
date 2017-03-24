@@ -31,6 +31,14 @@ if($reste<20){
             }else{
                 $img = $data['products'][$i]['image_url'];
             }
+            if(isset($data['products'][$i]['nutriments']['energy'])){
+                $kcal100 = $data['products'][$i]['nutriments']['energy']/4.184;
+                $quantity = $data['products'][$i]['quantity'];
+                $kcal = $kcal100*$quantity/100;
+            }else{
+                $kcal100 = 0;
+                $kcal = 0;
+            }
             ?>
             <div class="col-xs-3">
                 <a href="produit.php?id=<?= $data['products'][$i]['code']?>" class="thumbnail">
